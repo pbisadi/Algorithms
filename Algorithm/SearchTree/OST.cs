@@ -627,8 +627,5 @@ namespace Algorithm.SearchTree
             }
         }
     }
-
-
-
 }
 

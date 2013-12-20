@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.Graphs
+namespace Algorithm.DataStructures
 {
-    public class Graph
+    public class Bag<T>
     {
     }
 }
