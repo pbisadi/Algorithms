@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.DataStructures
+namespace Algorithm
 {
     public class Bag<T>
     {

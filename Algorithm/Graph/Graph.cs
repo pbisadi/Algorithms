@@ -4,10 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Algorithm.Graphs;
-using Algorithm.DataStructures;
 
-namespace Algorithm.Graphs
+namespace Algorithm
 {
     /// <summary>
     /// Basic API of a graph.
@@ -38,6 +36,7 @@ namespace Algorithm.Graphs
             throw new NotImplementedException();
         }
 
+        public int MyProperty { get; set; }
         /// <summary>
         /// Add an edge v-w
         /// </summary>
@@ -65,7 +64,7 @@ namespace Algorithm.Graphs
         /// </summary>
         public int E { get { throw new NotImplementedException(); } }
 
-        public string ToString()
+        public override string ToString()
         {
             throw new NotImplementedException(); 
         }
