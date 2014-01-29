@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using Algorithm;
 using System.Text;
+using Algorithm.DataStructures;
 
 namespace UnitTestProject
 {

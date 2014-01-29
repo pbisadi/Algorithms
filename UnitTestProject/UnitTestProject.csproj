@@ -52,25 +52,17 @@
   <ItemGroup>
     <Compile Include="UnionFind_UnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShellSort_UnitTest.cs" />
+    <Compile Include="Sort_UnitTest.cs" />
+    <Compile Include="ConvexHull_UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Algorithm\ClientConsoleApp.csproj">
-      <Project>{6bcd7826-12dc-451a-bb05-badf3a518487}</Project>
-      <Name>ClientConsoleApp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Algorithm\Graph\Graphs.csproj">
-      <Project>{8500733b-a7c8-4409-a120-f45de0d4091d}</Project>
-      <Name>Graphs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Algorithm\SearchTree\SearchTrees.csproj">
-      <Project>{ad2f2cb7-60f7-401d-902f-efb3f4f8a15c}</Project>
-      <Name>SearchTrees</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataStructures\DataStructures.csproj">
+    <ProjectReference Include="..\DataStructures\Algorithm.csproj">
       <Project>{33949281-e929-48e8-928b-aaeacf32aa20}</Project>
-      <Name>DataStructures</Name>
+      <Name>Algorithm</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -4,8 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Algorithm;
+using Algorithm.DataStructures;
 
-namespace Algorithm
+namespace Algorithm.Graphs
 {
     /// <summary>
     /// Basic API of a graph.
