@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.DataStructures
+namespace Algorithm.DataStructure
 {
     /// <summary>
     /// Components are maximal set of objects that are mutually connected 

@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using Algorithm;
 using System.Text;
-using Algorithm.DataStructures;
+using Algorithm.DataStructure;
 
 namespace UnitTestProject
 {
@@ -22,7 +22,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void BasicAPI_Test()
+        public void BasicAPI_()
         {
             string path = Path.Combine(_baseAddress, "BasicAPI_Test_input.txt");
             StreamReader SR = new StreamReader(Path.Combine(_baseAddress, "BasicAPI_Test_input.txt"));

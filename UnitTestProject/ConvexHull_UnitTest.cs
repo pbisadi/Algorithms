@@ -8,7 +8,7 @@ namespace UnitTestProject
     public class ConvexHull_UnitTest
     {
         [TestMethod]
-        public void GrahamScan_BasicTest()
+        public void GrahamScan_Basic()
         {
             Point2D[] p = { 
                               new Point2D(2,2), 
@@ -29,7 +29,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void GrahamScan_InlineHorPointsTest()
+        public void GrahamScan_InlineHorPoints()
         {
             Point2D[] p = { 
                               new Point2D(-1,0), 

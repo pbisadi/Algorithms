@@ -42,8 +42,10 @@
     <Compile Include="ComputaitonalGeometry\ConvexHull.cs" />
     <Compile Include="ComputaitonalGeometry\Point2D.cs" />
     <Compile Include="DataStructure\Bag.cs" />
+    <Compile Include="DataStructure\ProrityQueue.cs" />
     <Compile Include="Graph\Graph.cs" />
     <Compile Include="SearchTree\OST.cs" />
+    <Compile Include="Sort\HeapSort.cs" />
     <Compile Include="Sort\MergeSort.cs" />
     <Compile Include="Sort\MergeSortBU.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
