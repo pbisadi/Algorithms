@@ -55,6 +55,7 @@
     <Compile Include="Sort_UnitTest.cs" />
     <Compile Include="ConvexHull_UnitTest.cs" />
     <Compile Include="DataStructures_UnitTest.cs" />
+    <Compile Include="SearchTree_UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataStructures\Algorithm.csproj">

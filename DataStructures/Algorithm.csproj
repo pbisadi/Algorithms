@@ -43,7 +43,9 @@
     <Compile Include="ComputaitonalGeometry\Point2D.cs" />
     <Compile Include="DataStructure\Bag.cs" />
     <Compile Include="DataStructure\ProrityQueue.cs" />
+    <Compile Include="DataStructure\SymbolTable.cs" />
     <Compile Include="Graph\Graph.cs" />
+    <Compile Include="SearchTree\BinarySearchTree.cs" />
     <Compile Include="SearchTree\OST.cs" />
     <Compile Include="Sort\HeapSort.cs" />
     <Compile Include="Sort\MergeSort.cs" />
