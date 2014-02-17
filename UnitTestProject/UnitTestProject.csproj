@@ -50,10 +50,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="GeometryTests\IntervalSearchTree_UnitTest.cs" />
+    <Compile Include="Graph_UnitTest.cs" />
     <Compile Include="UnionFind_UnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sort_UnitTest.cs" />
-    <Compile Include="ConvexHull_UnitTest.cs" />
+    <Compile Include="GeometryTests\ConvexHull_UnitTest.cs" />
     <Compile Include="DataStructures_UnitTest.cs" />
     <Compile Include="SearchTree_UnitTest.cs" />
   </ItemGroup>

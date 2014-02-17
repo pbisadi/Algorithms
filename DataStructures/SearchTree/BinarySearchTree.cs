@@ -75,8 +75,6 @@ namespace Algorithm.SearchTree
             InOrder(x.right, q);
         }
 
-
-
         public Tuple<Key, Value> Floor(Key key)
         {
             Node x = Floor(root, key);
@@ -106,9 +104,8 @@ namespace Algorithm.SearchTree
             return x.Count;
         }
 
-
         public Tuple<Key, Value> Min()
-        {            
+        {
             var x = Min(root);
             return new Tuple<Key, Value>(x.key, x.value);
         }
@@ -170,6 +167,9 @@ namespace Algorithm.SearchTree
         public void Delete(Key key)
         { root = Delete(root, key); }
 
+        /// <summary>
+        /// Use Hilbbard Deletion
+        /// </summary>
         private Node Delete(Node x, Key key)
         {
             if (x == null) return null;
@@ -185,10 +185,9 @@ namespace Algorithm.SearchTree
                 x.right = DeleteMin(t.right);
                 x.left = t.left;
             }
-            x.Count = 1+  Size(x.left) + Size(x.right);
+            x.Count = 1 + Size(x.left) + Size(x.right);
             return x;
         }
-
     }
 
 

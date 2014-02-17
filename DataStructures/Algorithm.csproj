@@ -40,13 +40,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComputaitonalGeometry\ConvexHull.cs" />
+    <Compile Include="ComputaitonalGeometry\IntervalST.cs" />
     <Compile Include="ComputaitonalGeometry\Point2D.cs" />
     <Compile Include="DataStructure\Bag.cs" />
     <Compile Include="DataStructure\ProrityQueue.cs" />
     <Compile Include="DataStructure\SymbolTable.cs" />
-    <Compile Include="Graph\Graph.cs" />
+    <Compile Include="Graphs\Bipartite.cs" />
+    <Compile Include="Graphs\BreadthFirstPaths.cs" />
+    <Compile Include="Graphs\ConnectedComponents.cs" />
+    <Compile Include="Graphs\DepthFirstPaths.cs" />
+    <Compile Include="Graphs\Digraph\Digraph.cs" />
+    <Compile Include="Graphs\Digraph\DirectedBFS.cs" />
+    <Compile Include="Graphs\Digraph\DirectedDFS.cs" />
+    <Compile Include="Graphs\Graph.cs" />
+    <Compile Include="Graphs\Isomorphic.cs" />
     <Compile Include="SearchTree\BinarySearchTree.cs" />
     <Compile Include="SearchTree\OST.cs" />
+    <Compile Include="SearchTree\RedBlackTree.cs" />
     <Compile Include="Sort\HeapSort.cs" />
     <Compile Include="Sort\MergeSort.cs" />
     <Compile Include="Sort\MergeSortBU.cs" />

@@ -20,14 +20,19 @@ namespace Algorithm.Graphs
     public class Graph
     {
         private readonly int _V;
-        private Bag<int>[] adj; 
+        private HashSet<int>[] adj; 
         /// <summary>
         /// Creates an empty graph with V vertices
         /// </summary>
-        /// <param name="V">Vertices count</param>
-        public Graph(int V)
+        /// <param name="v">Vertices count</param>
+        public Graph(int v)
         {
-            throw new NotImplementedException();
+            this._V = v;
+            adj = new HashSet<int>[v];
+            for (int i = 0; i < v; i++)
+            {
+                adj[i] = new HashSet<int>();
+            }
         }
 
         /// <summary>
@@ -44,7 +49,8 @@ namespace Algorithm.Graphs
         /// </summary>
         public void AddEdge(int v, int w)
         {
-            throw new NotImplementedException();
+            adj[v].Add(w);
+            adj[w].Add(v);
         }
 
         /// <summary>
@@ -53,18 +59,29 @@ namespace Algorithm.Graphs
         /// <param name="v">Vertex index</param>
         public IEnumerable<int> Adj(int v)
         {
-            throw new NotImplementedException();
+            return adj[v];
         }
 
         /// <summary>
         /// Number of vertices
         /// </summary>
-        public int V { get { throw new NotImplementedException(); } }
+        public int V { get { return _V; } }
 
         /// <summary>
         /// Number of edges
         /// </summary>
-        public int E { get { throw new NotImplementedException(); } }
+        public int E
+        {
+            get
+            {
+                int count = 0;
+                for (int i = 0; i < adj.Length; i++)
+                {
+                    count += adj[i].Count;
+                }
+                return count;
+            }
+        }
 
         public override string ToString()
         {

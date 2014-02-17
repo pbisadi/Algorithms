@@ -66,7 +66,7 @@ namespace Algorithm.DataStructure
         /// <returns>returns the id of the component that p is in it</returns>
         public int Find(int p)
         {
-            throw new NotImplementedException();
+            return Root(p);
         }
 
         public int ComponentsCount()

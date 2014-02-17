@@ -22,7 +22,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void BasicAPI_()
+        public void UF_BasicAPI()
         {
             string path = Path.Combine(_baseAddress, "BasicAPI_Test_input.txt");
             StreamReader SR = new StreamReader(Path.Combine(_baseAddress, "BasicAPI_Test_input.txt"));
