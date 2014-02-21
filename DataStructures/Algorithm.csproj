@@ -49,6 +49,7 @@
     <Compile Include="Graphs\BreadthFirstPaths.cs" />
     <Compile Include="Graphs\ConnectedComponents.cs" />
     <Compile Include="Graphs\DepthFirstPaths.cs" />
+    <Compile Include="Graphs\Digraph\DepthFirstOrder.cs" />
     <Compile Include="Graphs\Digraph\Digraph.cs" />
     <Compile Include="Graphs\Digraph\DirectedBFS.cs" />
     <Compile Include="Graphs\Digraph\DirectedDFS.cs" />

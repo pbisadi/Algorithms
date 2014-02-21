@@ -212,6 +212,20 @@ namespace UnitTestProject
         }
 
         [TestMethod]
+        public void DepthFirstOrder_Test()
+        {
+            var G = new Digraph(4);
+            G.AddEdge(3, 2);
+            G.AddEdge(3, 1);
+            G.AddEdge(1, 0);
+            G.AddEdge(2, 0);
+            var DFO = new DepthFirstOrder(G);
+            var actual = new List<int>( DFO.GetReversePath());
+            Assert.AreEqual(3, actual[0]);
+            Assert.AreEqual(0, actual[3]);
+        }
+
+        [TestMethod]
         public void DirectedBFS_MultiSource_Test()
         {
             var sources = new HashSet<int>() { 0, 4 };
@@ -227,6 +241,34 @@ namespace UnitTestProject
             Assert.AreEqual("435", SB.ToString());
             Stack<int> path4 = (Stack<int>)BFS.PathTo(2); //We know that returned type is an stack
             Assert.AreEqual(0, path4.Pop());
+        }
+
+        [TestMethod]
+        public void Isomorphic_Test()
+        {
+            var G1 = new Graph(7);
+            G1.AddEdge(0, 1);
+            G1.AddEdge(0, 2);
+            G1.AddEdge(0, 6);
+            G1.AddEdge(0, 5);
+            G1.AddEdge(4, 5);
+            G1.AddEdge(4, 3);
+            G1.AddEdge(4, 6);
+            G1.AddEdge(3, 5);
+
+            var G2 = new Graph(7);
+            G2.AddEdge(4, 0);
+            G2.AddEdge(4, 1);
+            G2.AddEdge(4, 2);
+            G2.AddEdge(4, 3);
+            G2.AddEdge(5, 0);
+            G2.AddEdge(5, 1);
+            G2.AddEdge(5, 6);
+            G2.AddEdge(0, 6);
+
+            Assert.IsTrue(Isomorphic.IsIsomorphic(G1, G2));
+            Assert.IsFalse(Isomorphic.IsIsomorphic(G1, basicGraph));
+            Assert.IsFalse(Isomorphic.IsIsomorphic(G2, basicGraph));
         }
     }
 }
