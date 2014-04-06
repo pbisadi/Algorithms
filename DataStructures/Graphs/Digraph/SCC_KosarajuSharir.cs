@@ -4,19 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.Graphs
+namespace Algorithm.Graphs.Digraph
 {
-    public class ConnectedComponents
+    /// <summary>
+    /// Strongly Connected Components Algorithm by Kosaraju and Sharir
+    /// </summary>
+    public class SCC_KosarajuSharir
     {
         private bool[] marked;
         private int[] id;
         private int count = 0;
 
-        public ConnectedComponents(Graph G)
+        public SCC_KosarajuSharir(Digraph G)
         {
             marked = new bool[G.V];
             id = new int[G.V];
-            for (int v = 0; v < G.V; v++)
+            DepthFirstOrder dfs = new DepthFirstOrder(G.Reverse());
+            foreach (int v in dfs.GetReversePost())
             {
                 if (!marked[v])
                 {
@@ -24,10 +28,9 @@ namespace Algorithm.Graphs
                     count++;
                 }
             }
-
         }
 
-        private void DFS(Graph G, int v)
+        private void DFS(Digraph G, int v)
         {
             marked[v] = true;
             id[v] = count;
@@ -39,7 +42,7 @@ namespace Algorithm.Graphs
         public int Count() { return count; }
         public int ID(int v) { return id[v]; }
 
-        public bool Connected(int v, int w)
+        public bool StronglyConnected(int v, int w)
         {
             return (id[v] == id[w]);
         }

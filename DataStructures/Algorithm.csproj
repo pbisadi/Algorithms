@@ -53,6 +53,7 @@
     <Compile Include="Graphs\Digraph\Digraph.cs" />
     <Compile Include="Graphs\Digraph\DirectedBFS.cs" />
     <Compile Include="Graphs\Digraph\DirectedDFS.cs" />
+    <Compile Include="Graphs\Digraph\SCC_KosarajuSharir.cs" />
     <Compile Include="Graphs\Graph.cs" />
     <Compile Include="Graphs\Isomorphic.cs" />
     <Compile Include="SearchTree\BinarySearchTree.cs" />

@@ -21,7 +21,7 @@ namespace UnitTestProject
         }
 
         private static Graph basicGraph;
-        private static Digraph baseDigraph;
+        private static Digraph baseicDigraph;
 
         [ClassInitialize]
         public static void ClassInit(TestContext context)
@@ -36,16 +36,16 @@ namespace UnitTestProject
             basicGraph.AddEdge(4, 3);
             basicGraph.AddEdge(4, 5);
 
-            baseDigraph = new Digraph(7);
-            baseDigraph.AddEdge(5, 0);
-            baseDigraph.AddEdge(2, 4);
-            baseDigraph.AddEdge(3, 2);
-            baseDigraph.AddEdge(1, 2);
-            baseDigraph.AddEdge(0, 1);
-            baseDigraph.AddEdge(4, 3);
-            baseDigraph.AddEdge(3, 5);
-            baseDigraph.AddEdge(0, 2);
-            baseDigraph.AddEdge(6, 5);
+            baseicDigraph = new Digraph(7);
+            baseicDigraph.AddEdge(5, 0);
+            baseicDigraph.AddEdge(2, 4);
+            baseicDigraph.AddEdge(3, 2);
+            baseicDigraph.AddEdge(1, 2);
+            baseicDigraph.AddEdge(0, 1);
+            baseicDigraph.AddEdge(4, 3);
+            baseicDigraph.AddEdge(3, 5);
+            baseicDigraph.AddEdge(0, 2);
+            baseicDigraph.AddEdge(6, 5);
         }
 
         private TestContext testContextInstance;
@@ -149,6 +149,15 @@ namespace UnitTestProject
         }
 
         [TestMethod]
+        public void StronglyConnectedComponents_Test()
+        {
+            SCC_KosarajuSharir CC = new SCC_KosarajuSharir(baseicDigraph);
+            Assert.AreEqual(2, CC.Count());
+            Assert.AreEqual(0, CC.ID(0));
+            Assert.AreEqual(1, CC.ID(6));
+        }
+
+        [TestMethod]
         public void Bipartite_Test()
         {
             var BG = new Graph(7);
@@ -168,32 +177,6 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void Isomorphic_Test()
-        {
-            var G1 = new Graph(7);
-            G1.AddEdge(0, 1);
-            G1.AddEdge(0, 2);
-            G1.AddEdge(0, 5);
-            G1.AddEdge(0, 6);
-            G1.AddEdge(3, 4);
-            G1.AddEdge(3, 5);
-            G1.AddEdge(4, 5);
-            G1.AddEdge(4, 6);
-
-            var G2 = new Graph(7);
-            G2.AddEdge(0, 4);
-            G2.AddEdge(0, 5);
-            G2.AddEdge(0, 6);
-            G2.AddEdge(1, 4);
-            G2.AddEdge(1, 5);
-            G2.AddEdge(2, 4);
-            G2.AddEdge(3, 4);
-            G2.AddEdge(5, 6);
-
-            Assert.IsTrue(Isomorphic.IsIsomorphic(G1, G2));
-        }
-
-        [TestMethod]
         public void Digraph_API_Test()
         {
             Digraph G = new Digraph(3);
@@ -206,7 +189,7 @@ namespace UnitTestProject
         [TestMethod]
         public void DirectedDFS_Test()
         {
-            DirectedDFS DFS = new DirectedDFS(baseDigraph, 0);
+            DirectedDFS DFS = new DirectedDFS(baseicDigraph, 0);
             Assert.IsTrue(DFS.HasPathTo(5));
             Assert.IsFalse(DFS.HasPathTo(6));
         }
@@ -220,7 +203,7 @@ namespace UnitTestProject
             G.AddEdge(1, 0);
             G.AddEdge(2, 0);
             var DFO = new DepthFirstOrder(G);
-            var actual = new List<int>( DFO.GetReversePath());
+            var actual = new List<int>( DFO.GetReversePost());
             Assert.AreEqual(3, actual[0]);
             Assert.AreEqual(0, actual[3]);
         }
@@ -229,7 +212,7 @@ namespace UnitTestProject
         public void DirectedBFS_MultiSource_Test()
         {
             var sources = new HashSet<int>() { 0, 4 };
-            DirectedBFS BFS = new DirectedBFS(baseDigraph, sources);
+            DirectedBFS BFS = new DirectedBFS(baseicDigraph, sources);
             Assert.IsTrue(BFS.HasPathTo(3));
             Assert.IsFalse(BFS.HasPathTo(6));
             var path = BFS.PathTo(5);

@@ -41,7 +41,6 @@ namespace Algorithm.Graphs.Digraph
             throw new NotImplementedException();
         }
 
-        public int MyProperty { get; set; }
         /// <summary>
         /// Add an edge v-w
         /// </summary>
@@ -83,6 +82,19 @@ namespace Algorithm.Graphs.Digraph
         public override string ToString()
         {
             throw new NotImplementedException();
+        }
+
+        public Digraph Reverse()
+        {
+            var rev = new Digraph(this._V);
+            for (int v = 0; v < _V; v++)
+            {
+                foreach (int w in adj[v])
+                {
+                    rev.AddEdge(w, v);
+                }
+            }
+            return rev;
         }
     }
 }

@@ -9,11 +9,15 @@ namespace Algorithm.Graphs.Digraph
     public class DepthFirstOrder
     {
         private bool[] marked;
-        private Stack<int> reversePath;
-
+        
+        /// <summary>
+        /// reverse post order of a graph is the topological sort of vertexes 
+        /// </summary>
+        private Stack<int> reversePost;
+        
         public DepthFirstOrder(Digraph G)
         {
-            reversePath = new Stack<int>();
+            reversePost = new Stack<int>();
             marked = new bool[G.V];
             for (int v = 0; v < G.V; v++)
                 if (!marked[v])
@@ -25,14 +29,14 @@ namespace Algorithm.Graphs.Digraph
             marked[v] = true;
             foreach (var w in G.Adj(v))
             {
-                if (!marked[w]) DFS(G,v);
+                if (!marked[w]) DFS(G,w);
             }
-            reversePath.Push(v);
+            reversePost.Push(v);
         }
 
-        public IEnumerable<int> GetReversePath()
+        public IEnumerable<int> GetReversePost()
         {
-            return reversePath;
+            return reversePost;
         }
 
     }
