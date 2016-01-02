@@ -1,30 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Algorithm;
-using Algorithm.DataStructure;
 
 namespace Algorithm.Graphs
 {
     /// <summary>
     /// Basic API of a graph.
-    /// Vertices are represented by integers starting from 0
+    /// Vertexes are represented by integers starting from 0
     /// The graph is represented by:
     /// NOT set of edges (process inefficient)
     /// NOT Adjacency-matrix (space inefficient)
-    /// -> Adjacency-list: an array of bags of adjacent vertices for each vertex
+    /// -> Adjacency-list: an array of bags of adjacent vertexes for each vertex
     /// </summary>
     public class Graph
     {
         private readonly int _V;
-        private HashSet<int>[] adj; 
+        private HashSet<int>[] adj;
+
         /// <summary>
-        /// Creates an empty graph with V vertices
+        /// Creates an empty graph with V vertexes
         /// </summary>
-        /// <param name="v">Vertices count</param>
+        /// <param name="v">vertexes count</param>
         public Graph(int v)
         {
             this._V = v;
@@ -44,6 +40,7 @@ namespace Algorithm.Graphs
         }
 
         public int MyProperty { get; set; }
+
         /// <summary>
         /// Add an edge v-w
         /// </summary>
@@ -54,7 +51,7 @@ namespace Algorithm.Graphs
         }
 
         /// <summary>
-        /// Vertices adjacent to v
+        /// vertexes adjacent to v
         /// </summary>
         /// <param name="v">Vertex index</param>
         public IEnumerable<int> Adj(int v)
@@ -63,7 +60,7 @@ namespace Algorithm.Graphs
         }
 
         /// <summary>
-        /// Number of vertices
+        /// Number of vertexes
         /// </summary>
         public int V { get { return _V; } }
 
@@ -85,7 +82,7 @@ namespace Algorithm.Graphs
 
         public override string ToString()
         {
-            throw new NotImplementedException(); 
+            throw new NotImplementedException();
         }
     }
 }
