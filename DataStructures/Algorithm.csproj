@@ -56,7 +56,7 @@
     <Compile Include="Graphs\Digraph\SCC_KosarajuSharir.cs" />
     <Compile Include="Graphs\Graph.cs" />
     <Compile Include="Graphs\Isomorphic.cs" />
-    <Compile Include="Random\WeightedRandom.cs" />
+    <Compile Include="Randomization\WeightedRandom.cs" />
     <Compile Include="SearchTree\BinarySearchTree.cs" />
     <Compile Include="SearchTree\OST.cs" />
     <Compile Include="SearchTree\RedBlackTree.cs" />

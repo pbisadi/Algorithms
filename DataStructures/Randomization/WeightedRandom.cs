@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithm.Sort;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -10,6 +11,34 @@ namespace Algorithm.Randomization
 	public static class WeightedRandom
 	{
 		static System.Random _rnd = new System.Random();
+
+		/// <summary>
+		/// Randomly select specified number of items from the list.
+		/// The items with higher weight are in the result with with higher probability
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="items"></param>
+		/// <param name="weight"></param>
+		/// <returns></returns>
+		public static IList<T> WeightedSelect<T>(this IList<T> items, int select_count, Func<T, double> weight)
+		{
+			if (select_count < 1 || select_count > items.Count)
+				throw new ArgumentOutOfRangeException("The size of the selection must be a positive number equal or less than the size of the list");
+			items.Shuffle();
+			double sum = items.Select(i => weight(i)).Sum();
+			double chunk = sum / select_count;
+			var result = new List<T>();
+
+			for (int i = 0; i < items.Count(); i++)
+			{
+				if (rnd < weight(items[i]))
+				{
+					result.Add(items[i]);
+				}
+				rnd -= weight(items[i]);
+			}
+			return items;
+		}
 
 		public static int WeightedPick<T>(this IList<T> items, Func<T,double> weight)
 		{
