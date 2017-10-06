@@ -13,7 +13,7 @@ namespace UnitTestProject.RandomizationTests
 		public void WeightedSelect_OverSelecting()
 		{
 			var items = new List<int>() { 1, 1, 1};
-			items.WeightedSelect(4, i => i);
+			items.WeightedChoice(4, i => i);
 		}
 
 		[TestMethod]
@@ -21,7 +21,15 @@ namespace UnitTestProject.RandomizationTests
 		public void WeightedSelect_UnderSelecting()
 		{
 			var items = new List<int>() { 1, 1, 1 };
-			items.WeightedSelect(0, i => i);
+			items.WeightedChoice(0, i => i);
+		}
+
+		[TestMethod]
+		[ExpectedException(typeof(ArgumentOutOfRangeException), "The size of the selection cannot be less than 1")]
+		public void WeightedSelect_SmokeTest()
+		{
+			var items = new List<int>() { 1, 2, 3, 4, 5 };
+			items.WeightedChoice(3, i => i);
 		}
 	}
 }
