@@ -75,6 +75,7 @@ namespace Algorithm.Randomization
 				else
 					rnd -= weight(items[i].obj);
 				if (rnd < 0) rnd += ((int)(-rnd / chunk) + 1) * chunk; // to skip pieces that are greater than chunk size
+				if (rnd < 0) rnd += ((int)(-rnd / chunk) + 1) * chunk; // to skipp pieaces that are greater than chunk size
 			}
 			return items.Where(item => item.Flag == true).ToList<Flagable<T>>();
 		}
