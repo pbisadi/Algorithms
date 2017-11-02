@@ -30,6 +30,10 @@ namespace Algorithm.Randomization
 		{
 			if (selectCount < 1 || selectCount > items.Count)
 				throw new ArgumentOutOfRangeException("The size of the selection must be a positive number equal or less than the size of the list");
+
+			if (selectCount == items.Count)
+				return items;
+
 			items.Shuffle();
 
 			List<Flagable<T>> _list = ConvertToFlagable(items);
