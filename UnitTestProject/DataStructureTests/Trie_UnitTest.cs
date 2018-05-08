@@ -36,6 +36,22 @@ namespace UnitTestProject.DataStructureTests
 		}
 
 		[TestMethod]
+		public void Trie_CountAllStartingWith()
+		{
+			var T = new Trie<char, bool>();
+			T.Add("Test", true);
+			T.Add("Tester", true);
+			T.Add("Testee", true);
+
+			Assert.AreEqual(T.CountAllStartingWith("Test"), 3);
+			Assert.AreEqual(T.CountAllStartingWith("Tester"), 1);
+			Assert.AreEqual(T.CountAllStartingWith("Something totally different"), 0);
+
+			T.Remove("Test");
+			Assert.AreEqual(T.CountAllStartingWith("Test"), 2);
+		}
+
+		[TestMethod]
 		public void Trie_Remove()
 		{
 			var T = new Trie<char, bool>();

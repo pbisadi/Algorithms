@@ -14,7 +14,7 @@ namespace Algorithm.DataStructure
 	/// <typeparam name="value"></typeparam>
 	public class Trie<key,value>
 	{
-		TrieNode _root = new TrieNode(default(key));
+		protected TrieNode _root = new TrieNode(default(key));
 
 		/// <summary>
 		/// Add the new pair of keys and value to Trie.
@@ -27,7 +27,7 @@ namespace Algorithm.DataStructure
 			var n = _root;
 			foreach (key k in key)
 			{
-				if (!n.Children.ContainsKey(k)) n.Children.Add(k, new TrieNode(k));
+				n.AddChile(k);	// do not adds it if alrady exists
 				n = n.Children[k];
 			}
 			n.Value = value;
@@ -50,7 +50,7 @@ namespace Algorithm.DataStructure
 			return default(value);
 		}
 
-		private TrieNode FindNode(IEnumerable<key> key, TrieNode n)
+		protected TrieNode FindNode(IEnumerable<key> key, TrieNode n)
 		{
 			foreach (key k in key)
 			{
@@ -82,7 +82,14 @@ namespace Algorithm.DataStructure
 			return result;
 		}
 
-		private class TrieNode
+		public int CountAllStartingWith(IEnumerable<key> k)
+		{
+			var n = FindNode(k, _root);
+			if (n == null) return 0;
+			return n.SubTreeValueCount;
+		}
+
+		protected class TrieNode
 		{
 			public TrieNode(key key) { _key = key; }
 
@@ -92,7 +99,11 @@ namespace Algorithm.DataStructure
 				get { return _Value; }
 				set {
 					_Value = value;
-					IsValueNode = true;
+					if (!IsValueNode)
+					{
+						UpdateCountToTop(1);
+						IsValueNode = true;
+					}
 				}
 			}
 
@@ -104,10 +115,39 @@ namespace Algorithm.DataStructure
 			Dictionary<key, TrieNode> _children = new Dictionary<key, TrieNode>();
 			public Dictionary<key, TrieNode> Children { get { return _children; } }
 
+			public int SubTreeValueCount { get; internal set; }
+
+			public TrieNode Parent { get; internal set; }
+
 			public void ClearValue()
 			{
 				_Value = default(value);
+				UpdateCountToTop(-1);
 				IsValueNode = false;
+			}
+
+			/// <summary>
+			/// Do not adds it if alrady exists
+			/// </summary>
+			/// <param name="k">Key</param>
+			public void AddChile(key k)
+			{
+				if (!_children.ContainsKey(k))
+				{
+					var n = new TrieNode(k);
+					_children.Add(k, n);
+					n.Parent = this;
+				}
+			}
+
+			private void UpdateCountToTop(int i)
+			{
+				var n = this;
+				while (n != null)
+				{
+					n.SubTreeValueCount += i;
+					n = n.Parent;
+				}
 			}
 		}
 	}
