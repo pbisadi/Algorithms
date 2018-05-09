@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Algorithm.Sort.Shuffler;
 
 namespace Algorithm.Randomization
 {
@@ -16,7 +17,7 @@ namespace Algorithm.Randomization
 			public bool Flag = false;
 		}
 
-		static System.Random _rnd = new System.Random();
+		static Random _rnd = ThreadSafeRandom.ThisThreadsRandom;
 
 		/// <summary>
 		/// Randomly select specified number of items from the list.
@@ -67,6 +68,7 @@ namespace Algorithm.Randomization
 			double sum = items.Where(item => item.Flag == false).Sum(item => weight(item.obj));
 			double chunk = sum / selectCount;
 			double rnd = _rnd.NextDouble() * chunk;
+
 
 			for (int i = 0; i < items.Count; i++)
 			{
