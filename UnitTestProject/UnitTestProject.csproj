@@ -65,13 +65,13 @@
     <Compile Include="SearchTree_UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataStructures\Algorithm.csproj">
-      <Project>{33949281-e929-48e8-928b-aaeacf32aa20}</Project>
-      <Name>Algorithm</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <ProjectReference Include="..\Algorithms\PBCD.Algorithms.csproj">
+      <Project>{33949281-e929-48e8-928b-aaeacf32aa20}</Project>
+      <Name>PBCD.Algorithms</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

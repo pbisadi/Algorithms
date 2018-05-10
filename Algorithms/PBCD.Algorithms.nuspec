@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://opensource.org/licenses/GPL-3.0</licenseUrl>
+    <projectUrl>https://github.com/pbisadi/Algorithms</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>This is the first published package</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>ProrityQueue Bag SymboleTable Trie UnionFind SearchTree BST OST RBT Sort Graph Digraph BFS DFS SCC</tags>
+  </metadata>
+</package>
