@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Algorithm.Graphs.Digraph
 {
-    public class DepthFirstOrder
-    {
+    public class TopologicalSort
+	{
         private bool[] marked;
         
         /// <summary>
@@ -15,7 +15,7 @@ namespace Algorithm.Graphs.Digraph
         /// </summary>
         private Stack<int> reversePost;
         
-        public DepthFirstOrder(Digraph G)
+        public TopologicalSort(Digraph G)
         {
             reversePost = new Stack<int>();
             marked = new bool[G.V];
@@ -34,7 +34,7 @@ namespace Algorithm.Graphs.Digraph
             reversePost.Push(v);
         }
 
-        public IEnumerable<int> GetReversePost()
+        public IEnumerable<int> GetTopologicalySorted()
         {
             return reversePost;
         }
