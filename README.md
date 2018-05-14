@@ -17,6 +17,7 @@ The main name space is called  **Algorithms** which includes the following sub n
 - **DataStructure**
     - PriorityQueue: There are two implemented versions this DS, MaxPriorityQueue and MaxPriorityQueue.
     - UnionFind_QU: Uses Quick-Union algorithm for calculating connectec components in O(1). Each component is presented by a number.
+	- TRIE: This TRIE works with any chain of keys and not just strings. Also, in additional to regular TRIE functions, this one returns number of matching prefixes in O(l) where l is the length of the prefix.
 - **Graphs**
     - **Digraph**
         - Digraph: Represents a directed graph. This

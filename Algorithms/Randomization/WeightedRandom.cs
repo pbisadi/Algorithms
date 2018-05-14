@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Algorithm.Sort.Shuffler;
 
 namespace Algorithm.Randomization
 {
@@ -17,7 +16,7 @@ namespace Algorithm.Randomization
 			public bool Flag = false;
 		}
 
-		static Random _rnd = ThreadSafeRandom.ThisThreadsRandom;
+		static Random _rnd = Shuffler.ThreadSafeRandom.ThisThreadsRandom;
 
 		/// <summary>
 		/// Randomly select specified number of items from the list.
@@ -85,8 +84,6 @@ namespace Algorithm.Randomization
 			}
 			return items.Where(item => item.Flag == true).ToList<Flagable<T>>();
 		}
-
-
 
 		public static int WeightedPick<T>(this IList<T> items, Func<T, double> weight)
 		{

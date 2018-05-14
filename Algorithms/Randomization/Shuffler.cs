@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Algorithm.Sort
+namespace Algorithm.Randomization
 {
     public static class Shuffler
     {

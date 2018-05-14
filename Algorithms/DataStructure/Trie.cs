@@ -27,7 +27,7 @@ namespace Algorithm.DataStructure
 			var n = _root;
 			foreach (key k in key)
 			{
-				n.AddChile(k);	// do not adds it if alrady exists
+				n.AddChild(k);	// do not add it if alrady exists
 				n = n.Children[k];
 			}
 			n.Value = value;
@@ -130,7 +130,7 @@ namespace Algorithm.DataStructure
 			/// Do not adds it if alrady exists
 			/// </summary>
 			/// <param name="k">Key</param>
-			public void AddChile(key k)
+			public void AddChild(key k)
 			{
 				if (!_children.ContainsKey(k))
 				{
