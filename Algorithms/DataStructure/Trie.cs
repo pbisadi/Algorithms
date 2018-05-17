@@ -20,12 +20,12 @@ namespace Algorithm.DataStructure
 		/// Add the new pair of keys and value to Trie.
 		/// If the key already exists, override the value.
 		/// </summary>
-		/// <param name="k"></param>
-		/// <param name="v"></param>
-		public void Add(IEnumerable<key> key, value value)
+		/// <param name="keys">A chain of keys. Ex. String of chars</param>
+		/// <param name="value"></param>
+		public void Add(IEnumerable<key> keys, value value)
 		{
 			var n = _root;
-			foreach (key k in key)
+			foreach (key k in keys)
 			{
 				n.AddChild(k);	// do not add it if alrady exists
 				n = n.Children[k];
@@ -33,15 +33,19 @@ namespace Algorithm.DataStructure
 			n.Value = value;
 		}
 
-		public void Remove(IEnumerable<key> key)
+		/// <summary>
+		/// Remove the value from the data structure
+		/// </summary>
+		/// <param name="keys">A chain of keys. Ex. String of chars</param>
+		public void Remove(IEnumerable<key> keys)
 		{
-			FindNode(key, _root).ClearValue();
+			FindNode(keys, _root).ClearValue();
 		}
 
 		/// <summary>
 		/// Find the value added exactly by provided key
 		/// </summary>
-		/// <param name="k">The key of the value. Ex. String of chars</param>
+		/// <param name="key">A chain of keys. Ex. String of chars</param>
 		/// <returns>Return the value or default/null if it is not avaiable</returns>
 		public value Find(IEnumerable<key> key)
 		{
@@ -50,9 +54,16 @@ namespace Algorithm.DataStructure
 			return default(value);
 		}
 
-		protected TrieNode FindNode(IEnumerable<key> key, TrieNode n)
+		/// <summary>
+		/// Find the node with specified keys starting from node n.
+		/// The key and value of n and its parent nodes are not considered.
+		/// </summary>
+		/// <param name="keys">A chain of keys. Ex. String of chars</param>
+		/// <param name="n">The starting node for search</param>
+		/// <returns></returns>
+		protected TrieNode FindNode(IEnumerable<key> keys, TrieNode n)
 		{
-			foreach (key k in key)
+			foreach (key k in keys)
 			{
 				if (n.Children.ContainsKey(k))
 					n = n.Children[k];
@@ -62,11 +73,16 @@ namespace Algorithm.DataStructure
 			return n;
 		}
 
-		public IEnumerable<value> FindAllStartingWith(IEnumerable<key> k)
+		/// <summary>
+		/// Scan the whole tree and find all values that their chand of keys are starting with provided keys.
+		/// </summary>
+		/// <param name="keys">A chain of keys. Ex. String of chars</param>
+		/// <returns></returns>
+		public IEnumerable<value> FindAllStartingWith(IEnumerable<key> keys)
 		{
 			var q = new Queue<TrieNode>();
 			var result = new List<value>();
-			var n = FindNode(k, _root);
+			var n = FindNode(keys, _root);
 			if (n == null) return result;
 
 			q.Enqueue(n);
@@ -82,9 +98,14 @@ namespace Algorithm.DataStructure
 			return result;
 		}
 
-		public int CountAllStartingWith(IEnumerable<key> k)
+		/// <summary>
+		/// Count the number of values stored with a key chain starting with provided keys.
+		/// </summary>
+		/// <param name="keys">A chain of keys. Ex. String of chars</param>
+		/// <returns></returns>
+		public int CountAllStartingWith(IEnumerable<key> keys)
 		{
-			var n = FindNode(k, _root);
+			var n = FindNode(keys, _root);
 			if (n == null) return 0;
 			return n.SubTreeValueCount;
 		}
