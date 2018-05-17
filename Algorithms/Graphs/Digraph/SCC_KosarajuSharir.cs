@@ -19,8 +19,8 @@ namespace Algorithm.Graphs.Digraph
         {
             marked = new bool[G.V];
             id = new int[G.V];
-            DepthFirstOrder dfs = new DepthFirstOrder(G.Reverse());
-            foreach (int v in dfs.GetReversePost())
+			TopologicalSort dfs = new TopologicalSort(G.Reverse());
+            foreach (int v in dfs.GetTopologicalySorted())
             {
                 if (!marked[v])
                 {

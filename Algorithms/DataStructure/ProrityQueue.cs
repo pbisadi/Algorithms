@@ -15,10 +15,7 @@ namespace Algorithm.DataStructure
         /// <summary>
         /// Create an empty priority queue
         /// </summary>
-        public PriorityQueue()
-        {
-
-        }
+        public PriorityQueue() {}
 
         /// <summary>
         /// create a priority queue with given tuples
