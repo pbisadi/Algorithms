@@ -38,10 +38,10 @@ namespace Algorithm.DataStructure
         }
 
         /// <summary>
-        /// Return and remove largest key
+        /// Return and remove largest/smallest key
         /// </summary>
         /// <returns></returns>
-        public Tuple<Key, object> DelMax()
+        public Tuple<Key, object> DelTop()
         {
             if (this.IsEmpty())
                 throw new InvalidOperationException("The priority queue is empty.");
@@ -58,7 +58,7 @@ namespace Algorithm.DataStructure
             return N == 0;
         }
 
-        public Tuple<Key, object> Max()
+        public Tuple<Key, object> Top()
         {
             return pq[1];
         }
