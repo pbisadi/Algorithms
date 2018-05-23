@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace Algorithm.Sort
+namespace PBCD.Algorithms.Sort
 {
     public class MergeSortBU
     {

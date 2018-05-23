@@ -16,7 +16,9 @@ The main name space is called  **Algorithms** which includes the following sub n
     - ConvexHull: Gets a set of 2D points and returns a subset of them representing the smallest convex polygon that includes all points.
 - **DataStructure**
     - PriorityQueue: There are two implemented versions this DS, MaxPriorityQueue and MaxPriorityQueue.
-    - UnionFind_QU: Uses Quick-Union algorithm for calculating connectec components in O(1). Each component is presented by a number.
+    - QuickUnion: Uses weighted quick-union with path compression to calculate connected components in O(1).
+		Initial it by providing the number of components (nodes) and keep connecting them using Union() method. Note that you cannot disconnect component.
+		Property Count returns the number of components and node p and q are connected if Find(p) == Find(q)
 	- TRIE: This TRIE works with any chain of keys and not just strings. Also, in additional to regular TRIE functions, this one returns number of matching prefixes in O(l) where l is the length of the prefix.
 - **Graphs**
     - **Digraph**

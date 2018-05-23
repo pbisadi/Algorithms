@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.SearchTree
+namespace PBCD.Algorithms.SearchTree
 {
     public class BinarySearchTree<Key, Value>
         where Key : IComparable

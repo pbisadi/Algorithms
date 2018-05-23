@@ -68,7 +68,7 @@
     <Compile Include="Sort\QuickSort.cs" />
     <Compile Include="Sort\ShellSort.cs" />
     <Compile Include="Randomization\Shuffler.cs" />
-    <Compile Include="DataStructure\UnionFind.cs" />
+    <Compile Include="DataStructure\QuickUnion.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

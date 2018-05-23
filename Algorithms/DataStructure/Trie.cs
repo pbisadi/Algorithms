@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.DataStructure
+namespace PBCD.Algorithms.DataStructure
 {
 	/// <summary>
 	/// It is a generic Trie DS.

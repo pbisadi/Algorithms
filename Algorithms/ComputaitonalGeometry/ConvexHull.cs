@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.ComputationalGeometry
+namespace PBCD.Algorithms.ComputationalGeometry
 {
     public static class ConvexHull
     {

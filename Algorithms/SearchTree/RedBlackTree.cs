@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.SearchTree
+namespace PBCD.Algorithms.SearchTree
 {
     /// <summary>
     /// It is a Left Leaning Red-Black tree (LLRB Tree)

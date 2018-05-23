@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Collections;
 
-namespace Algorithm.Sort
+namespace PBCD.Algorithms.Sort
 {
     /// <summary>
     /// Merge sort is a stable sort as it does not move equal items pass each other.

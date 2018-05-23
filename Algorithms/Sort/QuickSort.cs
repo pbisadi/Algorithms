@@ -1,4 +1,4 @@
-﻿using Algorithm.Randomization;
+﻿using PBCD.Algorithms.Randomization;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.Sort
+namespace PBCD.Algorithms.Sort
 {
     public class QuickSort
     {

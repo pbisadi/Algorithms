@@ -4,18 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.DataStructure
+namespace PBCD.Algorithms.DataStructure
 {
 	/// <summary>
 	/// Components are maximal set of objects that are mutually connected 
-	/// Used algorithm: Quick-Union
+	/// Used algorithm: weighted quick-union with path compression
 	/// </summary>
-	public class UnionFind_QU
+	public class QuickUnion
 	{
 		private int[] id;
 		private int[] sz;   //Number of items in the tree rooted at i
-		public UnionFind_QU(int N)
+		private int _count;
+		public QuickUnion(int N)
 		{
+			if (N <= 0) throw new ArgumentOutOfRangeException("N must be a non-zero positive number.");
+			_count = N;
 			id = new int[N];
 			sz = new int[N];
 			for (int i = 0; i < N; i++)
@@ -40,6 +43,7 @@ namespace Algorithm.DataStructure
 		/// </summary>
 		public void Union(int p, int q)
 		{
+			if (Connected(p, q)) return;
 			int i = Root(p);
 			int j = Root(q);
 			if (sz[i] < sz[j])
@@ -52,6 +56,7 @@ namespace Algorithm.DataStructure
 				id[j] = i;
 				sz[i] += sz[j];
 			}
+			_count--;
 		}
 
 		/// <summary>
@@ -71,9 +76,6 @@ namespace Algorithm.DataStructure
 			return Root(p);
 		}
 
-		public int ComponentsCount()
-		{
-			throw new NotImplementedException();
-		}
+		public int ComponentsCount { get { return _count; } }
 	}
 }

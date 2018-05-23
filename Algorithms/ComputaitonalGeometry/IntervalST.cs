@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Algorithm.SearchTree;
+using PBCD.Algorithms.SearchTree;
 
-namespace Algorithm.ComputationalGeometry
+namespace PBCD.Algorithms.ComputationalGeometry
 {
     /// <summary>
     /// TODO: Watch Algorithm 11-4 and complete this

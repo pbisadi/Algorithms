@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.DataStructure
+namespace PBCD.Algorithms.DataStructure
 {
     //TODO: Use flexible array size like stack implementation
     public abstract class PriorityQueue<Key> where  Key : IComparable

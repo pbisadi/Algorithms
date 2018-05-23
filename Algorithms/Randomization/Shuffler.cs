@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Algorithm.Randomization
+namespace PBCD.Algorithms.Randomization
 {
     public static class Shuffler
     {

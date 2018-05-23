@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace Algorithm.ComputationalGeometry
+namespace PBCD.Algorithms.ComputationalGeometry
 {
     public class Point2D
     {

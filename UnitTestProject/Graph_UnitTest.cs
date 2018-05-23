@@ -2,8 +2,8 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Algorithm.Graphs;
-using Algorithm.Graphs.Digraph;
+using PBCD.Algorithms.Graphs;
+using PBCD.Algorithms.Graphs.Digraph;
 
 namespace UnitTestProject
 {

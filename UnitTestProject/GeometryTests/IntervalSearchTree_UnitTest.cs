@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Algorithm.ComputationalGeometry;
+using PBCD.Algorithms.ComputationalGeometry;
 
 namespace UnitTestProject.GeometryTests
 {

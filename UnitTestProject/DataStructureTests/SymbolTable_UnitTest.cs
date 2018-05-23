@@ -1,7 +1,7 @@
 ﻿/*
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Algorithm.DataStructure;
+using PBCD.Algorithms.DataStructure;
 
 namespace UnitTestProject.DataStructureTests
 {

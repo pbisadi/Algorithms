@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.Graphs.Digraph
+namespace PBCD.Algorithms.Graphs.Digraph
 {
     /// <summary>
     /// Strongly Connected Components Algorithm by Kosaraju and Sharir

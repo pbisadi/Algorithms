@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using Algorithm.Randomization;
+using PBCD.Algorithms.Randomization;
 using System.Linq;
 
 namespace UnitTestProject.RandomizationTests

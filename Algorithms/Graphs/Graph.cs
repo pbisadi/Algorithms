@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace Algorithm.Graphs
+namespace PBCD.Algorithms.Graphs
 {
     /// <summary>
     /// Basic API of a graph.

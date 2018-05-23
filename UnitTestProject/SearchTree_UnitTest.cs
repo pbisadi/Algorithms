@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Algorithm.DataStructure;
-using Algorithm.SearchTree;
+using PBCD.Algorithms.DataStructure;
+using PBCD.Algorithms.SearchTree;
 
 namespace UnitTestProject
 {

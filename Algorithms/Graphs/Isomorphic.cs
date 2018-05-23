@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm.Graphs
+namespace PBCD.Algorithms.Graphs
 {
     public static class Isomorphic
     {
