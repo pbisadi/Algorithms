@@ -128,7 +128,13 @@ namespace PBCD.Algorithms.DataStructure
                 pq = temp;
             }
         }
-    }
+
+		public override string ToString()
+		{
+			var result = from i in pq where i != null select i.Item1.ToString();
+			return string.Join(",", result);
+		}
+	}
 
     public class MaxPriorityQueue<Key> :PriorityQueue<Key> where Key : IComparable
     {
